@@ -1,10 +1,36 @@
 <!DOCTYPE html>
+<style>
+#title {
+	font-size: 2rem;
+}
+
+p {
+	opacity: 1;
+	colour: black;
+	text-align: center;
+}
+
+#content-background {
+	opacity: .5;
+	background-color: white;
+	width: 75%;
+	padding: 2rem 0;
+	margin: 5% 12.5% 5%;
+}
+
+</style>
 <html>
     <head>
         {% include head.html %}
     </head>
     <body>
         {% include header.html %}
-          {{ content }}
+        {{ content }}
+        <div id="content-background">
+	        {% for post in site.posts %}
+		        <p id="title"> {{ post.title }}</h3>
+		        <p> {{ post.content }} </p>
+	    	{% endfor %}
+    	</div>
     </body>
 </html>
